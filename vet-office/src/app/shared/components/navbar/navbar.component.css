@@ -1,0 +1,60 @@
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  padding: 10px 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1200px;
+  z-index: 1000;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
+.nav-logo img {
+  height: 30px;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-icon {
+  font-size: 18px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: white;
+  color: black;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
