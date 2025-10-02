@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://davidos56.github.io/VetOffice',
+  basePath: '/',
   supportedLocales: {
   "en-US": ""
 },
