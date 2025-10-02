@@ -1,6 +1,6 @@
 {
   "routes": {
-    "/VetOffice": {},
-    "/VetOffice/specjalizacje": {}
+    "/vet-office": {},
+    "/vet-office/specjalizacje": {}
   }
 }

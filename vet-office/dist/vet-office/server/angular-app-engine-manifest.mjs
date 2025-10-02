@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: '/vet-office',
   supportedLocales: {
   "en-US": ""
 },
