@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FeaturesModule } from '../features/features.module';
 import { SpecializationspageComponent } from './specializationspage/specializationspage.component';
+import { TeampageComponent } from './teampage/teampage.component';
 
 
 
@@ -10,8 +11,8 @@ import { SpecializationspageComponent } from './specializationspage/specializati
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule, HomepageComponent, SpecializationspageComponent
+    CommonModule, HomepageComponent, SpecializationspageComponent, TeampageComponent
   ],
-  exports:[HomepageComponent, SpecializationspageComponent]
+  exports:[HomepageComponent, SpecializationspageComponent, TeampageComponent]
 })
 export class PagesModule { }

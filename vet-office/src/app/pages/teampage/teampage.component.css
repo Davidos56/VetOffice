@@ -10,3 +10,7 @@ section.hero {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.container{
+    margin-top: 7rem;
+}
