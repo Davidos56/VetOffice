@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/vet-office",
+            "outputPath": "dist/VetOffice",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
