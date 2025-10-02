@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    /* Kolor główny */
+    --color-primary: #007876;
+
+    /* Odcienie jasne (np. hover, tło przycisków) */
+    --color-primary-light: #339896;
+    --color-primary-lighter: #66b6b4;
+    --color-primary-pale: #b3dad9;
+
+    /* Odcienie ciemne (np. aktywne elementy, nagłówki) */
+    --color-primary-dark: #005c5b;
+    --color-primary-darker: #003f3e;
+
+    /* Kolory akcentowe (uzupełniające) */
+    --color-accent: #f4a261;
+    /* ciepły pomarańcz dla kontrastu */
+    --color-accent-dark: #e76f51;
+
+    /* Neutralne tła i tekst */
+    --color-background: #fbfaf7;
+    --color-surface: #f2f2f0;
+    --color-text: #222222;
+    --color-text-light: #666666;
+
+    --bs-primary: var(--color-primary) !important;
+}

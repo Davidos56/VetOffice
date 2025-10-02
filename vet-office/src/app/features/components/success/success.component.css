@@ -1,25 +1,28 @@
-.navbar{
-  width: 1400px;           /* szerokość całego navbaru */
-    margin: 0 auto;         /* automatyczne marginesy po bokach = wyśrodkowanie */
-    display: flex;
-    justify-content: space-around; /* równomiernie rozstawione linki */
-    padding: 10px;
-    background-color: #333;
-    padding-top: 1.5em;
-    margin-top: 1.5em;
-    background: rgba(255, 255, 255, 0.2) !important; /* półprzezroczyste tło */
-    border-radius: 20px;                
-}
-
 .featurette-divider {
   margin: 5rem 0; /* Space out the Bootstrap <hr> more */
 }
+#hanging-icons{
+    background-color: var(--color-primary-lighter) !important;
+}
+#hanging-icons h2{
+    color: var(--color-background) !important;
+}
+
+#hanging-icons .text-body-secondary{
+    color: var(--color-surface) !important;
+}
+
+#hanging-icons .lead{
+    color: var(--color-surface) !important;
+}
+
 
 /* Thin out the marketing headings */
 /* rtl:begin:remove */
 .featurette-heading {
   letter-spacing: -.05rem;
 }
+
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */
