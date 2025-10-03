@@ -13,7 +13,7 @@ export const routes: Routes = [
         component: SpecializationspageComponent,
     },
     {
-        path: 'zespół',
+        path: 'team',
         component: TeampageComponent,
     },
 ];

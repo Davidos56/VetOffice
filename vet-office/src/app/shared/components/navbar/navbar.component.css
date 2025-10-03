@@ -1,28 +1,46 @@
-.navbar{
-  width: 1400px;           /* szerokość całego navbaru */
-    margin: 0 auto;         /* automatyczne marginesy po bokach = wyśrodkowanie */
-    display: flex;
-    justify-content: space-around; /* równomiernie rozstawione linki */
-    padding: 10px;
-    background-color: #333;
-    padding-top: 1.5em;
-    margin-top: 1.5em;
-    background: rgba(255, 255, 255, 0.2) !important; /* półprzezroczyste tło */
-    border-radius: 20px;                
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 10px;
+  margin: 1.5em auto 0 auto; /* top margin + centered horizontally */
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  will-change: background;
+  max-width: 100%; /* default, overridden in media queries */
 }
 
+.nav-item{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500; /* lekko pogrubiona */
+  font-size: 1rem;  /* 16px */
+  letter-spacing: 0.5px;
+}
+.navbar-toggler{
+  border: none;         
+}
+
+
+/* Navbar background when scrolled */
+.scrolled {
+  background-color: rgba(0, 120, 118, 0.8) !important;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Featurette Divider */
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 5rem 0;
 }
 
-/* Thin out the marketing headings */
-/* rtl:begin:remove */
+/* Featurette Heading */
 .featurette-heading {
-  letter-spacing: -.05rem;
+  letter-spacing: -0.05rem;
 }
 
 @media (min-width: 40em) {
-  /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
@@ -38,4 +56,25 @@
   .featurette-heading {
     margin-top: 7rem;
   }
+}
+
+/* Navbar max-widths per breakpoint */
+@media (min-width: 576px) {
+  .navbar { max-width: 540px; }
+}
+
+@media (min-width: 768px) {
+  .navbar { max-width: 720px; }
+}
+
+@media (min-width: 992px) {
+  .navbar { max-width: 960px; }
+}
+
+@media (min-width: 1200px) {
+  .navbar { max-width: 1140px; }
+}
+
+@media (min-width: 1400px) {
+  .navbar { max-width: 1320px; }
 }
