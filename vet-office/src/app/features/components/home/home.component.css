@@ -19,3 +19,42 @@ section.hero {
   border-color: var(--color-primary-dark) !important;
   
 }
+
+ h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #ff6b6b;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  a {
+    transition: transform 0.2s, color 0.2s;
+
+    &:hover {
+      color: #ff6b6b;
+      transform: scale(1.2);
+    }
+  }

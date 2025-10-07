@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ComunicationService } from '../../../services/communication.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
- openSMS() {
-    const phoneNumber = '+1234567890'; // optional
-    const message = 'Hello from Angular!'; // optional
-    const smsUrl = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
-    
-    window.location.href = smsUrl;
+  constructor(private comunicationService: ComunicationService){}
+
+  onSendSms(): void{
+    this.comunicationService.openSMS();
   }
+
 }

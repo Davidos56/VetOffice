@@ -1,4 +1,22 @@
 /* Navbar Styles */
+form {
+  color: white;
+}
+
+form #makeCall{
+  margin-bottom: 0;
+  margin-right: 1rem;
+  color: white;
+}
+form #sendSms:hover{
+  background-color: red;
+  color: white;
+}
+
+form #openNavigate:hover{
+  background-color: green;
+  color: white;
+}
 .navbar {
   display: flex;
   justify-content: space-around;

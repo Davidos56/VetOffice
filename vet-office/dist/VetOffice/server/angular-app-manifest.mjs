@@ -20,11 +20,11 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 5447, hash: '3b10c0974b52f2155e0081c0887247b95dd8dcca04d7c8696027b37b26b7a74e', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 1043, hash: '8640acdd0eeaf42c68abb8048d20fd494b56cffbcff8245746d4468b61cb7b72', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'team/index.html': {size: 25987, hash: '6dfa9112183f06449e430f087d257425b59a7ae21a2f779e254dbd433f392ec1', text: () => import('./assets-chunks/team_index_html.mjs').then(m => m.default)},
-    'specjalizacje/index.html': {size: 27492, hash: '6ad89a159af2fed8060469811a5f7f97ce0b275427662b7eefe54d084c20b08d', text: () => import('./assets-chunks/specjalizacje_index_html.mjs').then(m => m.default)},
-    'index.html': {size: 36870, hash: '7006708f4db779bdda652cc4291a607a4c897b8fd4cd9aa74c2c326ca3e0d644', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 5499, hash: '4ac266d20dc25fb847fcee87703740d10a2a7b09c5867f5eabb4253ca56c097e', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1095, hash: 'cf7a12dd31cb24d517faee9c06450bdbcc4fa2cc463d0b1f218f8d20d05a26d1', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'specjalizacje/index.html': {size: 28157, hash: '2dc8d6429bffa7ccb2bd8acdfec85075c89370c59dcd42723ddcb256c9a91670', text: () => import('./assets-chunks/specjalizacje_index_html.mjs').then(m => m.default)},
+    'team/index.html': {size: 26626, hash: '8c430fdc7a2940dce65bf6ce1b81133e3a19ada575ec7c76e397fa07006cd9ed', text: () => import('./assets-chunks/team_index_html.mjs').then(m => m.default)},
+    'index.html': {size: 37554, hash: '7815d4ed52ccfc0f8983d0d861ad0de72f8a04ce1138290fd12abf847a149eaf', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
     'styles-XF2CPB6K.css': {size: 231262, hash: '4IzkTwgO5yc', text: () => import('./assets-chunks/styles-XF2CPB6K_css.mjs').then(m => m.default)}
   },
 };

@@ -1,6 +1,8 @@
 <nav [ngClass]="scrolledBackground" class="navbar navbar-expand-md navbar-dark fixed-top">
+
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -16,5 +18,16 @@
         </li>
       </ul>
     </div>
+    <form class="d-flex align-items-center ms-auto">
+      <button id="makeCall" class="btn me-2" type="button" (click)="onMakeCall()">
+        <i class="bi bi-telephone-fill me-1"></i>
+        {{appConfig.defaultSmsNumber}}
+      </button>
+       <button id="openNavigate" class="btn btn-outline-light me-2" type="button" (click)="onOpenNavigate()">
+        <i class="bi bi-geo-alt-fill me-1"></i>
+       Dojazd
+      </button>
+      <button id="sendSms" class="btn btn-outline-light me-2" type="button" (click)="onSendSms()">Umów wizyte</button>
+    </form>
   </div>
 </nav>
