@@ -1,35 +1,62 @@
 <section class="hero justify-content-center bg-dark">
   <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row align-items-center g-5 py-5">
+      
+     
 
       <!-- Kolumna z informacjami firmy -->
-      <div class="col-lg-6 text-white">
-        <!-- Nazwa firmy -->
-        <h2 class="mb-3">Gabinet Weterynaryjny Brzescy Mierzyn </h2>
+      <div class="col-lg-8 text-white mx-auto">
+           <div class="d-flex align-items-center mb-4 flex-wrap">
+          <img
+            src="../../../../assets/img/wet_logo.svg"
+            alt="Gabinet Weterynaryjny Brzescy"
+            class="bg-white rounded shadow-sm me-3"
+            style="height: 80px; width: auto;"
+          />
+          <h2 class="mb-0 fw-bold fs-2 flex-grow-1 text-white">
+            Gabinet Weterynaryjny Brzescy Mierzyn
+          </h2>
+        </div>
+
+        <!-- Komunikat o statusie otwarcia -->
+        <!-- <div *ngIf="statusInfo" class="alert alert-warning text-dark py-2 px-3 mb-4 d-inline-block">
+          {{ statusInfo }}
+        </div> -->
 
         <!-- Godziny otwarcia -->
         <h3 class="mb-2">Godziny otwarcia:</h3>
-        <p class="mb-1">Pon - Pt: 9:00 - 18:00</p>
-        <p class="mb-3">Sob: 10:00 - 14:00</p>
-        <!--Adres-->
+        <ul class="list-unstyled mb-3">
+          <li>Pon - Pt: 9:00 - 18:00</li>
+          <li>Sob: 10:00 - 14:00</li>
+          <li>Niedz: nieczynne</li>
+        </ul>
+
+        <!-- Adres -->
         <h3 class="mb-2">Adres:</h3>
         <p class="mb-3">
           <i class="bi bi-geo-alt-fill me-2"></i>
-          ul. Przykładowa 12, 70-001 Szczecin
+          ul. Przykładowa 12, 70-001 Mierzyn
         </p>
+
         <!-- Telefon -->
         <h3 class="mb-2">Telefon:</h3>
         <p class="mb-3">
-          <i class="bi bi-telephone-fill me-2"></i> +48 123 456 789
+          <i class="bi bi-telephone-fill me-2"></i>
+          <a href="tel:+48123456789" class="text-white text-decoration-none">+48 123 456 789</a>
         </p>
 
         <!-- Social media -->
         <h3 class="mb-2">Znajdź nas:</h3>
         <a href="#" class="text-white me-3 fs-4"><i class="bi bi-facebook"></i></a>
-       
+        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
+
         <!-- Przycisk akcji -->
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
-          <button type="button" (click)="onSendSms()" class="btn btn-primary btn-lg px-4 me-md-2">
+          <button
+            type="button"
+            (click)="onSendSms()"
+            class="btn btn-primary btn-lg px-4 me-md-2"
+          >
             Umów wizytę
           </button>
         </div>

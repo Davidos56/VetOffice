@@ -6,6 +6,7 @@ import { SuccessComponent } from './components/success/success.component';
 import { TeamComponent } from './components/team/team.component';
 import { SpecializationitemComponent } from './components/specializationitem/specializationitem.component';
 import { TeamitemComponent } from './components/teamitem/teamitem.component';
+import { ReviewComponent } from './components/review/review.component';
 
 
 
@@ -18,12 +19,13 @@ import { TeamitemComponent } from './components/teamitem/teamitem.component';
     SuccessComponent,
     TeamComponent,
     SpecializationitemComponent,
-    TeamitemComponent
+    TeamitemComponent,
+    ReviewComponent
   ],
   exports: [
     HomeComponent,
     SpecializationsComponent,
     SuccessComponent,
-    TeamComponent,SpecializationitemComponent, TeamitemComponent]
+    TeamComponent,SpecializationitemComponent, TeamitemComponent, ReviewComponent]
 })
 export class FeaturesModule { }
