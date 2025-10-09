@@ -11,12 +11,13 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 })
 export class ReviewComponent implements OnInit {
   reviews: ReviewItem[] = [];
+  currentIndex: number = 0;
   loading = true;
 
-   constructor(private reviewsService: ReviewService, private sanitizer: DomSanitizer) {}
+  constructor(private reviewsService: ReviewService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-       this.reviewsService.getReviews().subscribe({
+    this.reviewsService.getReviews().subscribe({
       next: (data) => {
         this.reviews = data;
         this.loading = false;
@@ -26,9 +27,14 @@ export class ReviewComponent implements OnInit {
         this.loading = false;
       }
     });
-  }
 
+    // setInterval(() => this.nextSlide(), 4000); // zmiana co 4s
+  }
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + 1) % this.reviews.length;
+    console.log(this.currentIndex)
+  }
   getSafeUrl(url: string): SafeUrl {
-  return this.sanitizer.bypassSecurityTrustUrl(url);
-}
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
 }

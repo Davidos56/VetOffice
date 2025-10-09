@@ -1,27 +1,31 @@
 <section>
     <div class="container px-4 py-5" id="hanging-icons">
-        <h2 class="pb-2 border-bottom">Hanging icons</h2>
+        <h2 class="pb-2 border-bottom">Opinie</h2>
         <div class="row justify-content-center py-5">
-            @for (review of reviews; track $index) {
-            <div class="col-md-4 col-lg-4">
-                <div class="review-card">
-                    <div class="d-flex align-items-center mb-2">
-                        <img [src]="getSafeUrl(review.profile_photo_url)" alt="{{ review.author_name }}"
-                            class="rounded-circle me-3" width="50" height="50">
-                        <div>
-                            <div class="review-author">{{ review.author_name }}</div>
-                            <div class="review-date">{{ review.relative_time_description }}</div>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @for (review of reviews; track $index) {
+                    <div class="col-md-3 col-lg-3 carousel-item px-6" [class.active]="currentIndex === $index">
+                        <div class="review-card justify-content-center">
+                            <div class="d-flex align-items-center mb-2">
+                                <img [src]="getSafeUrl(review.profile_photo_url)" alt="{{ review.author_name }}"
+                                    class="rounded-circle me-3" width="50" height="50">
+                                <div>
+                                    <div class="review-author">{{ review.author_name }}</div>
+                                    <div class="review-date">{{ review.relative_time_description }}</div>
+                                </div>
+                            </div>
+                            <div class="review-stars mb-2">
+                                @for (item of [].constructor(review.rating); track $index) {
+                                <i class="bi bi-star-fill"></i>
+                                }
+                            </div>
+                            <p>{{review.text}}</p>
                         </div>
                     </div>
-                    <div class="review-stars mb-2">
-                        @for (item of [].constructor(review.rating); track $index) {
-                        <i class="bi bi-star-fill"></i>
-                        }
-                    </div>
-                    <p>{{review.text}}</p>
+                    }
                 </div>
             </div>
-            }
         </div>
     </div>
 </section>

@@ -7,6 +7,7 @@ import { TeamComponent } from './components/team/team.component';
 import { SpecializationitemComponent } from './components/specializationitem/specializationitem.component';
 import { TeamitemComponent } from './components/teamitem/teamitem.component';
 import { ReviewComponent } from './components/review/review.component';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 
 
@@ -20,12 +21,13 @@ import { ReviewComponent } from './components/review/review.component';
     TeamComponent,
     SpecializationitemComponent,
     TeamitemComponent,
-    ReviewComponent
+    ReviewComponent,
+    GoogleMapsModule
   ],
   exports: [
     HomeComponent,
     SpecializationsComponent,
     SuccessComponent,
-    TeamComponent,SpecializationitemComponent, TeamitemComponent, ReviewComponent]
+    TeamComponent,SpecializationitemComponent, TeamitemComponent, ReviewComponent, GoogleMapsModule]
 })
 export class FeaturesModule { }

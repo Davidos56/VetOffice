@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://davidos56.github.io/VetOffice',
+  basePath: 'https://gabinetbrzescy.pl/app',
   supportedLocales: {
   "en-US": ""
 },

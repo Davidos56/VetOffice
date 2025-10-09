@@ -5,11 +5,11 @@ import { FeaturesModule } from './features/features.module';
 import { CommonModule } from '@angular/common';
 import { PagesModule } from './pages/pages.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { GoogleMapsModule } from '@angular/google-maps';
 CommonModule
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SharedModule, PagesModule, CommonModule, HttpClientModule],
+  imports: [RouterOutlet, SharedModule, PagesModule, CommonModule, HttpClientModule, GoogleMapsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

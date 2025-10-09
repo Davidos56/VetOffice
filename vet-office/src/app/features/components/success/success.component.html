@@ -1,58 +1,38 @@
-<section id="hanging-icons">
-<div class="container px-4 py-5" >
-<div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading fw-normal lh-1">
-      Lorem ipsum dolor sit amet.
-      <span class="text-body-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-    </h2>
-    <p class="lead">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-    </p>
-    <div class="container text-center my-5">
-  <div class="row">
-    
-    <!-- Counter 1 -->
-    <div class="col-md-4 mb-4">
-      <div class="counter-box p-4 ">
-        <h2 class="counter text-white" data-target="150">0</h2>
-       <p class="text-white">Projects</p>
+<section class="bg-light py-5">
+  <div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">Jak dojechać</h2>
+    <div class="row justify-content-center py-5">
+
+
+      <!-- Adres -->
+      <div class="col-12 col-lg-5 text-center text-lg-start  justify-content-center align-items-center">
+        <p class="fs-5 mb-3">
+          Wjeżdżając do <strong>Mierzyna</strong> od strony <strong>Szczecina</strong> ulicą <strong>Welecką</strong>,
+          po minięciu znaku miejscowości skręć w prawo w ulicę <strong>Spółdzielców</strong>(Pred sklepem
+          <strong>Lidl</strong>).
+        </p>
+        <div class="text-center mt-4 ">
+          <button id="openNavigateFeature" class="btn btn-primary me-3 px-5 py-2 fs-4" type="button" (click)="onOpenNavigate()">
+            <i class="bi bi-geo-alt-fill me-1"></i>
+            Dojazd
+          </button>
+        </div>
+
+      </div>
+      <!-- Mapa -->
+      <div class="col-12 col-lg-6">
+        <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+          @if(mapLeaded){
+          <google-map [height]="'500px'" [width]="'100%'" [center]="center" [zoom]="zoom">
+            <map-marker [position]="markerPosition"></map-marker>
+          </google-map>
+          }
+          @else{
+          DUPA
+          }
+
+        </div>
       </div>
     </div>
-
-    <!-- Counter 2 -->
-    <div class="col-md-4 mb-4">
-      <div class="counter-box p-4">
-        <h2 class="counter text-white" data-target="320">0</h2>
-        <p class="text-white">Projects</p>
-      </div>
-    </div>
-
-    <!-- Counter 3 -->
-    <div class="col-md-4 mb-4">
-      <div class="counter-box p-4">
-        <h2 class="counter text-white" data-target="75">0</h2>
-       <p class="text-white">Projects</p>
-      </div>
-    </div>
-
   </div>
-</div>
-  </div>
-  <div class="col-md-5">
-    <svg aria-label="Placeholder: 500x500"
-      class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500"
-      preserveAspectRatio="xMidYMid slice" role="img" width="500" xmlns="http://www.w3.org/2000/svg">
-      <title>Placeholder</title>
-      <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect>
-      <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-        500x500
-      </text>
-    </svg>
-  </div>
-</div>
-
-</div>
 </section>
-
-
