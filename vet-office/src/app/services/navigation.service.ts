@@ -4,7 +4,7 @@ import { AppConfig } from "../core/app-config";
 @Injectable({ providedIn: 'root' })
 export class NavigationService {
 
-    apiKey='AIzaSyDMBSHcg7kCDFYUysruREyFAbLt5tTqSVs'
+    apiKey='apikey'
     private loaded = false;
 
     openNavigation(): void {
