@@ -4,9 +4,8 @@ import { AppConfig } from "../core/app-config";
 @Injectable({ providedIn: 'root' })
 export class NavigationService {
 
-    apiKey='apikey'
     private loaded = false;
-
+    
     openNavigation(): void {
         const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(AppConfig.adress)}`;
         window.open(mapsUrl, '_blank');
@@ -20,7 +19,7 @@ export class NavigationService {
       }
 
       const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${this.apiKey}&libraries=places`;
+      script.src = `https://serwer2569134.home.pl/cms/wp-json/maps/v1/cache`;
       script.async = true;
       script.defer = true;
       script.onload = () => {

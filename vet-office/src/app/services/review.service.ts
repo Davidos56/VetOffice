@@ -12,7 +12,7 @@ export class ReviewService {
     constructor(private http: HttpClient) { }
 
     getReviews(): Observable<ReviewItem[]> {
-        return this.http.get<any>(AppConfig.defaultGoogleAPI).pipe(
+        return this.http.get<any>(AppConfig.defaulAPIEndpoint + AppConfig.defaultApiEndpointConfig.googleReviewEndpoint).pipe(
             map(response => {
                 // Dostosuj do struktury swojego API WordPressa
                 const reviews = response?.result?.reviews || response || [];

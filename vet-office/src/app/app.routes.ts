@@ -8,12 +8,8 @@ export const routes: Routes = [
         path: '',
         component: HomepageComponent,
     },
-        {
+    {
         path: 'specjalizacje',
         component: SpecializationspageComponent,
-    },
-    {
-        path: 'team',
-        component: TeampageComponent,
     },
 ];

@@ -1,3 +1,9 @@
+      footer {
+        background-color: var(--color-primary-light) !important;
+      }
+      footer a, footer p {
+        color: #FFFFFF !important;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;

@@ -5,7 +5,7 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @for (review of reviews; track $index) {
-                    <div class="col-md-3 col-lg-3 carousel-item px-6" [class.active]="currentIndex === $index">
+                    <div class="col-md-3 col-lg-3 carousel-item px-3" [class.active]="currentIndex === $index">
                         <div class="review-card justify-content-center">
                             <div class="d-flex align-items-center mb-2">
                                 <img [src]="getSafeUrl(review.profile_photo_url)" alt="{{ review.author_name }}"

@@ -1,4 +1,6 @@
-import { Component, Input, input, signal, OnChanges, SimpleChanges, WritableSignal } from '@angular/core';
+import { Component, Input, input, signal, OnChanges, SimpleChanges, WritableSignal, OnInit } from '@angular/core';
+import { FacebookService } from '../../../services/facebook.service';
+import { FacebookPost } from '../../../core/facebookpost.model';
 
 @Component({
   selector: 'app-specializationitem',
@@ -6,7 +8,21 @@ import { Component, Input, input, signal, OnChanges, SimpleChanges, WritableSign
   templateUrl: './specializationitem.component.html',
   styleUrl: './specializationitem.component.css'
 })
-export class SpecializationitemComponent implements OnChanges {
+export class SpecializationitemComponent implements OnChanges, OnInit {
+
+constructor(private fbService: FacebookService,){}
+
+  posts: FacebookPost[] = [];
+  ngOnInit(): void {
+    this.fbService.getPosts().subscribe({
+      next: (data) => {
+        this.posts = data;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
 
   @Input() value! :number
   featuretteText!: WritableSignal<string> 
