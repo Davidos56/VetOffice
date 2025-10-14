@@ -1,9 +1,10 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AppConfig } from '../../../core/app-config';
 import { ComunicationService } from '../../../services/communication.service';
 import { NavigationService } from '../../../services/navigation.service';
+import { GoogleService } from '../../../services/google.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,30 +13,40 @@ import { NavigationService } from '../../../services/navigation.service';
   styleUrl: './navbar.component.css'
 })
 
-export class NavbarComponent {
-  constructor(private comunicationService: ComunicationService, private navigationService: NavigationService ) {}
-isScrolled = false;
-scrolledBackground = ""
-public appConfig = AppConfig;
+export class NavbarComponent implements OnInit {
+  constructor(
+    private comunicationService: ComunicationService,
+    private navigationService: NavigationService,
+    private googleService: GoogleService) { }
+  isScrolled = false;
+  scrolledBackground = ""
+  phoneNumber:string = ""
+  public appConfig = AppConfig;
 
- @HostListener('window:scroll', [])
+  ngOnInit(): void {
+   this.googleService.getPhoneNumber().subscribe(x=>this.phoneNumber = x)
+  }
+
+
+
+  @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50; 
-    if(this.isScrolled) {
+    this.isScrolled = window.scrollY > 50;
+    if (this.isScrolled) {
       this.scrolledBackground = 'scrolled'
-    }else{
+    } else {
       this.scrolledBackground = ''
     }
   }
 
-  onSendSms(): void{
+  onSendSms(): void {
     this.comunicationService.openSMS();
   }
-  onMakeCall(): void{
-    this.comunicationService.makeCall();
+  onMakeCall(): void {
+    this.comunicationService.makeCall(this.phoneNumber);
 
   }
-  onOpenNavigate(): void{
+  onOpenNavigate(): void {
     this.navigationService.openNavigation();
   }
 }

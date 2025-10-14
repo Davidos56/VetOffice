@@ -16,7 +16,6 @@ export class FacebookService {
   getPosts(): Observable<FacebookPost[]> {
         return this.http.get<any>(AppConfig.defaulAPIEndpoint + AppConfig.defaultApiEndpointConfig.facebookPostsEndpoint).pipe(
             map(res => {
-                // Dostosuj do struktury swojego API WordPressa
                 const reviews = Array.isArray(res) ? res : res.data || [];
                 return reviews.map((r: any) => ({
                     message: r.message,
@@ -24,13 +23,13 @@ export class FacebookService {
                     full_picture: r.full_picture,
                 }));
             }),
-            tap(reviews => (this.cache = reviews)), // cache w pamięci
+            tap(reviews => (this.cache = reviews)),
             catchError(this.handleError)
         );
     }
 
     private handleError(error: HttpErrorResponse) {
-        console.error('❌ Błąd pobierania opinii:', error);
+        console.error('❌ Błąd pobierania postów:', error);
         return throwError(() => new Error('Nie udało się pobrać opinii.'));
     }
 }

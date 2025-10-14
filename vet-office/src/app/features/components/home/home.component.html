@@ -1,63 +1,65 @@
-<section class="hero justify-content-center bg-dark">
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row align-items-center g-5 py-5">
+<section class="hero bg-dark text-white">
+  <div class="container text-center text-lg-start">
+    <div class="row align-items-center g-5">
       
-     
-
-      <!-- Kolumna z informacjami firmy -->
-      <div class="col-lg-8 text-white mx-auto">
-           <div class="d-flex align-items-center mb-4 flex-wrap">
+      <!-- Logo i nazwa -->
+      <div class="col-lg-10 fade-in">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-start mb-4">
           <img
-            src="../../../../assets/img/wet_logo.svg"
+            src="assets/img/wet_logo.svg"
             alt="Gabinet Weterynaryjny Brzescy"
-            class="bg-white rounded shadow-sm me-3"
+            class="bg-white rounded shadow-sm me-md-3 mb-3 mb-md-0"
             style="height: 80px; width: auto;"
           />
-          <h2 class="mb-0 fw-bold fs-2 flex-grow-1 text-white">
-            Gabinet Weterynaryjny Brzescy Mierzyn
-          </h2>
+          <h1 class="fw-bold mb-0">{{basicInfo.name}}</h1>
         </div>
 
-        <!-- Komunikat o statusie otwarcia -->
-        <!-- <div *ngIf="statusInfo" class="alert alert-warning text-dark py-2 px-3 mb-4 d-inline-block">
-          {{ statusInfo }}
-        </div> -->
-
         <!-- Godziny otwarcia -->
-        <h3 class="mb-2">Godziny otwarcia:</h3>
-        <ul class="list-unstyled mb-3">
-          <li>Pon - Pt: 9:00 - 18:00</li>
-          <li>Sob: 10:00 - 14:00</li>
-          <li>Niedz: nieczynne</li>
-        </ul>
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.OPENHOURS'| translate}}</h3>
+          <ul class="list-unstyled mb-3">
+            @for(weekday of basicInfo.weekday_text; track $index){
+              
+            <li><strong>{{weekday.day}}:</strong> {{weekday.hours}}</li>
+            }
+          </ul>
+        </div>
 
         <!-- Adres -->
-        <h3 class="mb-2">Adres:</h3>
-        <p class="mb-3">
-          <i class="bi bi-geo-alt-fill me-2"></i>
-          ul. Przykładowa 12, 70-001 Mierzyn
-        </p>
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.ADRESS'| translate}}</h3>
+          <p class="mb-3">
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            {{basicInfo.formatted_address}}
+          </p>
+        </div>
 
         <!-- Telefon -->
-        <h3 class="mb-2">Telefon:</h3>
-        <p class="mb-3">
-          <i class="bi bi-telephone-fill me-2"></i>
-          <a href="tel:+48123456789" class="text-white text-decoration-none">+48 123 456 789</a>
-        </p>
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.PHONE'| translate}}</h3>
+          <p class="mb-3">
+            <i class="bi bi-telephone-fill me-2"></i>
+            <a class="text-white text-decoration-none">{{basicInfo.formatted_phone_number}}</a>
+          </p>
+        </div>
 
         <!-- Social media -->
-        <h3 class="mb-2">Znajdź nas:</h3>
-        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.FINDUS'| translate}}</h3>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+            <a href="#" class="text-white hover-primary"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white hover-primary"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
 
         <!-- Przycisk akcji -->
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+        <div class="d-grid d-md-flex justify-content-center justify-content-md-start mt-5">
           <button
             type="button"
             (click)="onSendSms()"
-            class="btn btn-primary btn-lg px-4 me-md-2"
+            class="btn btn-primary btn-lg px-5 py-2 fw-semibold"
           >
-            Umów wizytę
+            {{'BUTTONS.MAKEAPPOITMENT'| translate}}
           </button>
         </div>
       </div>

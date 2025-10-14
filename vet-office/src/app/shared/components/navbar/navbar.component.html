@@ -15,9 +15,9 @@
       </ul>
     </div>
     <form class="d-flex align-items-center ms-auto">
-      <button id="makeCall" class="btn me-2" type="button" (click)="onMakeCall()">
+      <button id="makeCall" class="btn btn-outline-light no-border me-2" type="button" (click)="onMakeCall()">
         <i class="bi bi-telephone-fill me-1"></i>
-        {{appConfig.defaultSmsNumber}}
+       <span class="hide-text">{{phoneNumber}}</span>
       </button>
       <button id="openNavigate" class="btn btn-outline-light me-2" type="button" (click)="onOpenNavigate()">
         <i class="bi bi-geo-alt-fill me-1"></i>

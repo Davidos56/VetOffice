@@ -3,10 +3,12 @@
 /* --- background --- */
 section.hero {
   position: relative;
-  min-height: 90vh;
+  padding-top: 9rem !important;
+  padding-bottom: 5rem !important;
   background-image: url('../../../../assets/img/pexels-tima-miroshnichenko-6235017.jpg'); /* możesz podmienić na swoje */
-  background-size: cover;
+  background-size: cover;     /* zachowuje proporcje, wypełnia, przycina jeśli trzeba */
   background-position: center;
+  width: 100%;
   background-repeat: no-repeat;
   filter: brightness(0.75);
   display: flex;
@@ -20,9 +22,17 @@ section.hero {
   
 }
 
+
+.hero .text-primary {
+  color: #FFFFFF !important;
+}
+
 .hero h2 {
   white-space: normal; 
 }
+ .flex-md-row {
+    flex-direction: column !important;
+  } 
 
 @media (max-width: 576px) {
   .hero .d-flex {
@@ -34,6 +44,12 @@ section.hero {
     margin-bottom: 1rem;
   }
 }
+
+@media (min-width: 992px) {
+    .flex-md-row {
+         flex-direction: row !important; 
+    }
+  }
 
  h2 {
     font-size: 3rem;

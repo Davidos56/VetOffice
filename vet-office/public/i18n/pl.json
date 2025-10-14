@@ -1,7 +1,36 @@
 {
-    "MENU":{
+    "MENU": {
         "HOME": "Home",
         "NEWS": "Aktualności"
     },
-    "NEWS":"Aktualności"
+    "HOME": {
+        "OPENHOURS": "Godziny otwarcia",
+        "ADRESS": "Adres",
+        "PHONE": "Telefon",
+        "FINDUS": "Znajdź nas"
+    },
+    "BUTTONS":{
+        "MAKEAPPOITMENT": "Umów wizytę"
+    },
+    "NEWS": "Aktualności",
+    "DAYS": {
+        "LONG": {
+            "MONDAY": "Poniedziałek",
+            "TUESDAY": "Wtorek",
+            "WEDNESDAY": "Środa",
+            "THURSDAY": "Czwartek",
+            "FRIDAY": "Piątek",
+            "SATURDAY": "Sobota",
+            "SUNDAY": "Niedziela"
+        },
+        "SHORT": {
+            "MONDAY": "Pon",
+            "TUESDAY": "Wt",
+            "WEDNESDAY": "Śr",
+            "THURSDAY": "Czw",
+            "FRIDAY": "Pt",
+            "SATURDAY": "Sob",
+            "SUNDAY": "Niedz"
+        }
+    }
 }

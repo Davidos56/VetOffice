@@ -2,5 +2,6 @@
     "MENU":{
         "HOME": "Home",
         "NEWS": "Aktualności"
-    }
+    },
+    "NEWS":"Aktualności"
 }
