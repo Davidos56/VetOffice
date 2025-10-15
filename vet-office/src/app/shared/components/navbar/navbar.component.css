@@ -3,48 +3,52 @@ form {
   color: white;
 }
 
-.hide-text{
-   display: none;
+.hide-text {
+  display: none;
 }
-form #makeCall{
-  margin-bottom: 0;
-  margin-right: 1rem;
-  color: white;
-  border: none !important;   /* usuwa border */
-  box-shadow: none;          /* opcjonalnie usuwa cień */
+.me-1 {
+  margin-right: 0 !important;
 }
 
-form #sendSms:hover{
+
+form #sendSms:hover {
   background-color: red;
   color: white;
 }
 
-form #openNavigate:hover{
+form #openNavigate:hover {
   background-color: green;
   color: white;
 }
+
 .navbar {
   display: flex;
   justify-content: space-around;
-  padding: 1.5rem 10px;
-  margin: 1.5em auto 0 auto; /* top margin + centered horizontally */
-  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  padding: 1rem 10px;
+  margin: 1.5em auto 0 auto;
+  /* top margin + centered horizontally */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* semi-transparent */
   border-radius: 20px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition: background-color 0.5s ease, color 0.5s ease;
   will-change: background;
-  max-width: 100%; /* default, overridden in media queries */
+  max-width: 100%;
+  /* default, overridden in media queries */
 }
 
-.nav-item{
+.nav-item {
   font-family: "Roboto", sans-serif;
-  font-weight: 500; /* lekko pogrubiona */
-  font-size: 1rem;  /* 16px */
+  font-weight: 500;
+  /* lekko pogrubiona */
+  font-size: 1rem;
+  /* 16px */
   letter-spacing: 0.5px;
 }
-.navbar-toggler{
-  border: none;         
+
+.navbar-toggler {
+  border: none;
 }
 
 
@@ -82,56 +86,60 @@ form #openNavigate:hover{
   }
 }
 
-@media (min-width: 400px) {
-   .hide-text{
-    display: none;
-  }
-  form{
-    max-width: 300px;
-  }
-}
-@media (min-width: 412px) {
-   .hide-text{
+
+@media (min-width: 485px) {
+  .hide-text {
     display: inline-block;
   }
+
+  .me-1 {
+    margin-right: .25rem !important;
+  }
 }
+
 @media (min-width: 485px) {
-  form button{
+  form button {
     font-size: 1rem;
   }
-  .container-fluid .navbar-toggler{
+
+  .container-fluid .navbar-toggler {
     padding: 0px !important;
-  }
-  form{
-   max-width: none;
   }
 }
 
 @media (min-width: 500px) {
-  form button{
+  form button {
     font-size: 1rem;
   }
 }
+
 /* Navbar max-widths per breakpoint */
 @media (min-width: 576px) {
-  .navbar { max-width: 540px; }
-  form button{
-    font-size: 1rem;
+  .navbar {
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .navbar { max-width: 720px; }
+  .navbar {
+    max-width: 720px;
+  }
 }
 
 @media (min-width: 992px) {
-  .navbar { max-width: 960px; }
+  .navbar {
+    max-width: 960px;
+  }
 }
 
 @media (min-width: 1200px) {
-  .navbar { max-width: 1140px; }
+  .navbar {
+    max-width: 1140px;
+  }
 }
 
 @media (min-width: 1400px) {
-  .navbar { max-width: 1320px; }
+  .navbar {
+    max-width: 1320px;
+  }
 }
