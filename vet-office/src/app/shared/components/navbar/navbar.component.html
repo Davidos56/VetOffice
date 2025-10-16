@@ -1,32 +1,35 @@
-<nav [ngClass]="scrolledBackground" class="navbar navbar-expand-md navbar-dark fixed-top">
-
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/specjalizacje" routerLinkActive="active">Aktualności</a>
-        </li>
-      </ul>
+<div class="navbar-container justify-content-center">
+  <nav [ngClass]="scrolledBackground" class="navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }">{{'MENU.HOME'| translate}}</a>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/specjalizacje"
+              routerLinkActive="active">{{'MENU.NEWS'| translate}}</a>
+          </li>
+        </ul>
+      </div>
+      <form class="d-flex align-items-center">
+        <button id="makeCall" class="btn btn-outline-light no-border me-2" type="button" (click)="onMakeCall()">
+          <i class="bi bi-telephone-fill me-1"></i>
+          <span class="btn-text hide-text">{{phoneNumber}}</span>
+        </button>
+        <button id="openNavigate" class="btn btn-outline-light me-2" type="button" (click)="onOpenNavigate()">
+          <i class="bi bi-geo-alt-fill me-1"></i>
+          <span class="btn-text hide-text">{{'BUTTONS.DRIVE'| translate}}</span>
+        </button>
+        <button id="sendSms" class="btn btn-outline-light me-2" type="button" (click)="onSendSms()">
+          <i class="bi bi-calendar-plus me-1"></i>
+          <span class="btn-text hide-text">{{'BUTTONS.MAKEAPPOITMENT'| translate}}</span>
+        </button>
+      </form>
     </div>
-    <form class="d-flex align-items-center ms-auto">
-      <button id="makeCall" class="btn btn-outline-light no-border me-2" type="button" (click)="onMakeCall()">
-        <i class="bi bi-telephone-fill me-1"></i>
-       <span class="hide-text">{{phoneNumber}}</span>
-      </button>
-      <button id="openNavigate" class="btn btn-outline-light me-2" type="button" (click)="onOpenNavigate()">
-        <i class="bi bi-geo-alt-fill me-1"></i>
-          <span class="hide-text">Dojazd</span>
-      </button>
-      <button id="sendSms" class="btn btn-outline-light me-2" type="button" (click)="onSendSms()">
-        <i class="bi bi-calendar-plus me-1"></i>
-           <span class="hide-text">umów wizytę</span>
-      </button>
-    </form>
-  </div>
-</nav>
+  </nav>
+</div>

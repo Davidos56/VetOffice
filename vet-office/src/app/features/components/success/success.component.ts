@@ -3,10 +3,11 @@ import { GoogleMapsModule } from '@angular/google-maps'
 import { NavigationService } from '../../../services/navigation.service';
 import { MapMarker } from '@angular/google-maps';
 import { isPlatformBrowser } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-success',
-  imports: [GoogleMapsModule, MapMarker],
+  imports: [GoogleMapsModule, MapMarker, TranslatePipe],
   templateUrl: './success.component.html',
   styleUrl: './success.component.css'
 })

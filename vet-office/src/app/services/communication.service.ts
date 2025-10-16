@@ -8,16 +8,12 @@ export class ComunicationService{
    */
   openSMS(
     phoneNumber: string = AppConfig.defaultSmsNumber,
-    message: string = AppConfig.defaultSmsMessage
   ): void {
-    if (!phoneNumber && !message) {
+    if (!phoneNumber) {
       console.warn('CommunicationService: Both phone number and message are empty.');
       return;
     }
-
-    const encodedMessage = encodeURIComponent(message.trim());
-    const smsUrl = this.getSmsUrl(phoneNumber, encodedMessage);
-
+    const smsUrl = this.getSmsUrl(phoneNumber);
     this.navigateToUrl(smsUrl, 'SMS');
   }
 
@@ -48,10 +44,7 @@ export class ComunicationService{
   /**
    * Builds an SMS URL that is compatible with both Android and iOS.
    */
-  private getSmsUrl(phoneNumber: string, encodedMessage: string): string {
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    return isIOS
-      ? `sms:${phoneNumber}&body=${encodedMessage}`
-      : `sms:${phoneNumber}?body=${encodedMessage}`;
+  private getSmsUrl(phoneNumber: string): string {
+    return `sms:${phoneNumber}`;
   }
 }
