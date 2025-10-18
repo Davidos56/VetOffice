@@ -1,7 +1,42 @@
 {
-    "MENU":{
+    "MENU": {
         "HOME": "Home",
         "NEWS": "Aktualności"
     },
-    "NEWS":"Aktualności"
+    "HOME": {
+        "OPENHOURS": "Godziny otwarcia",
+        "ADRESS": "Adres",
+        "PHONE": "Telefon",
+        "FINDUS": "Znajdź nas"
+    },
+    "BUTTONS":{
+        "MAKEAPPOITMENT": "Umów wizytę",
+        "DRIVE": "Dojazd",
+        "MORE": "Więcej"
+    },
+    "DRIVE":{
+        "DESC":  "Wjeżdżając do <strong>Mierzyna</strong> od strony <strong>Szczecina</strong> ulicą <strong>Welecką</strong>, po minięciu znaku miejscowości skręć w prawo w ulicę <strong>Spółdzielców</strong>(Przed sklepem <strong>Lidl</strong>)."
+    },
+    
+    "NEWS": "Aktualności",
+    "DAYS": {
+        "LONG": {
+            "MONDAY": "Poniedziałek",
+            "TUESDAY": "Wtorek",
+            "WEDNESDAY": "Środa",
+            "THURSDAY": "Czwartek",
+            "FRIDAY": "Piątek",
+            "SATURDAY": "Sobota",
+            "SUNDAY": "Niedziela"
+        },
+        "SHORT": {
+            "MONDAY": "Pon",
+            "TUESDAY": "Wt",
+            "WEDNESDAY": "Śr",
+            "THURSDAY": "Czw",
+            "FRIDAY": "Pt",
+            "SATURDAY": "Sob",
+            "SUNDAY": "Niedz"
+        }
+    }
 }

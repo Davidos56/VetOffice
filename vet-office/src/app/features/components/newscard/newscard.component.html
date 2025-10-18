@@ -1,5 +1,5 @@
 <div class="container px-4 py-5" id="hanging-icons">
-  <h2 class="pb-2 border-bottom">{{'NEWS'| translate}}</h2>
+  <h2 class="pb-2 border-bottom">{{ 'NEWS' | translate}}</h2>
   @if(!isLoading){
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     @for (post of posts; track $index) {
@@ -13,7 +13,7 @@
         </p>
         <p class="text-news">{{post.message}}</p>
         <a href="#" class="btn btn-primary">
-          {{'BUTTONS.MORE'| translate}}
+          {{ 'BUTTONS.MORE' | translate}}
         </a>
       </div>
     </div>

@@ -2,14 +2,13 @@
     <div class="container col-xxl-8 px-4 py-5">
         <div class="row flex-lg-row align-items-center g-5 py-5">
             <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit,</h1>
+                <h1 class="display-5 fw-bold lh-1 mb-3 text-white">{{ 'NEWS' | translate}}</h1>
             </div>
         </div>
     </div>
 </section>
 <div class="container marketing">
-<app-specializationitem [value]="1"></app-specializationitem>
-<app-specializationitem [value]="2"></app-specializationitem>
-<app-specializationitem [value]="3"></app-specializationitem>
-<app-specializationitem [value]="4"></app-specializationitem>
+    @for (post of posts; track $index) {
+    <app-specializationitem [Title]="post.title" [CreatedDate]="post.formatted_date" [Message]="post.message" [Img]="post.full_picture">
+    </app-specializationitem>
+    }

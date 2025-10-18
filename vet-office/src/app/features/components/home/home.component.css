@@ -17,6 +17,9 @@ section.hero {
   min-height: 70vh;
 
 }
+img{
+  background-color: #00000000;
+}
 .info-block {
   opacity: 0;
   transform: translateX(-50px);

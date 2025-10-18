@@ -4,4 +4,5 @@ export interface FacebookPost {
     created_time: string,
     full_picture: string,
     formatted_date: Date | null;
+    
 }

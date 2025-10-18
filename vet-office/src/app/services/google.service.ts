@@ -71,6 +71,7 @@ export class GoogleService {
         const short = (d: string) => {
             const dayKey = d.toUpperCase();
             const translated = this.getTranslationKey(d);
+            console.log(`DAYS.SHORT.${translated}`);
             return this.translate.instant(`DAYS.SHORT.${translated}`) || d;
         };
 
