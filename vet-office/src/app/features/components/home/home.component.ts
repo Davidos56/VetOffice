@@ -26,6 +26,6 @@ export class HomeComponent implements OnInit {
   }
 
   onSendSms(): void {
-    this.comunicationService.openSMS();
+    this.comunicationService.openSMS(this.basicInfo.formatted_phone_number);
   }
 }

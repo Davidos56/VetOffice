@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AppConfig } from '../../../core/app-config';
 import { ComunicationService } from '../../../services/communication.service';
-import { NavigationService } from '../../../services/navigation.service';
 import { GoogleService } from '../../../services/google.service';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -17,7 +16,6 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit {
   constructor(
     private comunicationService: ComunicationService,
-    private navigationService: NavigationService,
     private googleService: GoogleService,
     private el: ElementRef) { }
   isScrolled = false;
@@ -51,7 +49,7 @@ export class NavbarComponent implements OnInit {
 
   }
   onOpenNavigate(): void {
-    this.navigationService.openNavigation();
+    this.googleService.openNavigation();
   }
 }
 

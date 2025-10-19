@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps'
-import { NavigationService } from '../../../services/navigation.service';
 import { MapMarker } from '@angular/google-maps';
 import { isPlatformBrowser } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { GoogleService } from '../../../services/google.service';
 
 @Component({
   selector: 'app-success',
@@ -20,10 +20,10 @@ export class SuccessComponent implements OnInit {
   markerPosition: google.maps.LatLngLiteral = { lat: 53.42824, lng: 14.4774952 };
 
 
-  constructor(private navService: NavigationService, @Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(private googleService: GoogleService , @Inject(PLATFORM_ID) private platformId: Object) { }
 
   onOpenNavigate(): void {
-    this.navService.openNavigation();
+    this.googleService.openNavigation();
   }
 
   ngOnInit(): void {
@@ -34,13 +34,11 @@ export class SuccessComponent implements OnInit {
   }
 
   loadMap(): void {
-    this.navService.load().then(() => {
+    this.googleService.load().then(() => {
       this.mapLeaded = true;
       console.log('mapLoaded', this.mapLeaded);
     }).catch(err => {
       console.error('Error loading Google Maps', err);
     });
   }
-
-  
 }

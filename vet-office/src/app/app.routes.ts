@@ -9,7 +9,7 @@ export const routes: Routes = [
         component: HomepageComponent,
     },
     {
-        path: 'specjalizacje',
+        path: 'news',
         component: SpecializationspageComponent,
     },
 ];

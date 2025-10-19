@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class GoogleService {
 
     private cache: GoogleInfo | null = null;
+    private loaded = false;
 
     constructor(private http: HttpClient, private translate: TranslateService) { }
 
@@ -17,7 +18,7 @@ export class GoogleService {
         if (this.cache) {
             return of(this.cache);
         }
-        return this.http.get<any>(AppConfig.defaulAPIEndpoint + AppConfig.defaultApiEndpointConfig.googleReviewEndpoint).pipe(
+        return this.http.get<any>(AppConfig.defaulAPIEndpoint + AppConfig.defaultApiEndpointConfig.googleBasicEndpoint).pipe(
             map(response => {
                 // Dostosuj do struktury swojego API WordPressa
                 const info = response?.result || response || {};
@@ -32,6 +33,25 @@ export class GoogleService {
             catchError(this.handleError)
         );
     }
+       load(): Promise<void> {
+        return new Promise((resolve, reject) => {
+            if (this.loaded) {
+                resolve();
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = AppConfig.defaulAPIEndpoint + AppConfig.defaultApiEndpointConfig.googleMapsEndpoint;
+            script.async = true;
+            script.defer = true;
+            script.onload = () => {
+                this.loaded = true;
+                resolve();
+            };
+            script.onerror = (err) => reject(err);
+            document.body.appendChild(script);
+        });
+    }
 
     getPhoneNumber(): Observable<string> {
         if (this.cache?.formatted_phone_number) {
@@ -44,12 +64,30 @@ export class GoogleService {
         }
     }
 
+     getAdress(): Observable<string> {
+        if (this.cache?.formatted_address) {
+            return of(this.cache.formatted_address);
+        } else {
+            return this.getBasicInfo().pipe(
+                tap(x => this.cache = x), // zapis do cache
+                map(x => x.formatted_address) // zwracamy tylko numer telefonu
+            );
+        }
+    }
+
+    openNavigation(): void {
+        const adress = this.getAdress().subscribe(x=>{
+            const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x)}`;
+            window.open(mapsUrl, '_blank');
+        })
+    }
+
     private handleError(error: HttpErrorResponse) {
         console.error('❌ Błąd pobierania opinii:', error);
         return throwError(() => new Error('Nie udało się pobrać opinii.'));
     }
 
-    groupOpeningHours(data: string[]): WeekDay[] {
+    private groupOpeningHours(data: string[]): WeekDay[] {
         const parsed = data.map(item => {
             const [day, hours] = item.split(": ");
             return { day, hours };
@@ -81,7 +119,7 @@ export class GoogleService {
         }));
     }
 
-    getTranslationKey(value: string): string | undefined {
+    private getTranslationKey(value: string): string | undefined {
         const translations = this.translate.instant('DAYS.LONG');
         const key = Object.keys(translations).find(
             k => translations[k].toLowerCase() === value.toLowerCase()

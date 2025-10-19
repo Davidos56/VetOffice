@@ -6,9 +6,7 @@ export class ComunicationService{
  /**
    * Opens the user's default SMS app with a pre-filled message.
    */
-  openSMS(
-    phoneNumber: string = AppConfig.defaultSmsNumber,
-  ): void {
+  openSMS(phoneNumber: string): void {
     if (!phoneNumber) {
       console.warn('CommunicationService: Both phone number and message are empty.');
       return;
@@ -20,7 +18,7 @@ export class ComunicationService{
   /**
    * Initiates a phone call using the device's dialer.
    */
-  makeCall(phoneNumber: string = AppConfig.defaultCallNumber): void {
+  makeCall(phoneNumber: string): void {
     if (!phoneNumber) {
       console.warn('CommunicationService: Phone number is missing.');
       return;
