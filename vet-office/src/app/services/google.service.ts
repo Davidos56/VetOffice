@@ -15,9 +15,6 @@ export class GoogleService {
     constructor(private http: HttpClient, private translate: TranslateService) { }
 
     getBasicInfo(): Observable<GoogleInfo> {
-        if (this.cache) {
-            return of(this.cache);
-        }
         return this.http.get<any>(AppConfig.defaulAPIEndpoint + AppConfig.defaultApiEndpointConfig.googleBasicEndpoint).pipe(
             map(response => {
                 // Dostosuj do struktury swojego API WordPressa
@@ -29,7 +26,6 @@ export class GoogleService {
                     formatted_phone_number: info.formatted_phone_number
                 } as GoogleInfo
             }),
-            tap(info => (this.cache = info)), // cache w pamięci
             catchError(this.handleError)
         );
     }
@@ -109,7 +105,6 @@ export class GoogleService {
         const short = (d: string) => {
             const dayKey = d.toUpperCase();
             const translated = this.getTranslationKey(d);
-            console.log(`DAYS.SHORT.${translated}`);
             return this.translate.instant(`DAYS.SHORT.${translated}`) || d;
         };
 

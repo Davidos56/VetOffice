@@ -14,14 +14,20 @@
   }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
-}
 
 .btn.btn-primary {
   background-color: var(--color-primary-light) !important;
   border-color: var(--color-primary-dark) !important;
   
+}
+.featurette-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.odd{
+  background-color: #FFFFFF;
+}
+
+.even{
+   background-color: #f5f5f5;
 }

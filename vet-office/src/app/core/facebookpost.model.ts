@@ -1,4 +1,5 @@
 export interface FacebookPost {
+    id:string;
     title: string;
     message: string;
     created_time: string;

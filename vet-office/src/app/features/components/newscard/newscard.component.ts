@@ -6,6 +6,8 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
+import { Router } from '@angular/router';
+import { PageNavigationService } from '../../../services/page-navigation.service';
 
 registerLocaleData(localePl);
 
@@ -18,7 +20,11 @@ registerLocaleData(localePl);
 export class NewsCardComponent {
 
   isLoading = true;
-  constructor(private fbService: FacebookService, private translate: TranslateService) { }
+  constructor(
+    private fbService: FacebookService, 
+    private translate: TranslateService,
+    private router: Router,
+    private pnService: PageNavigationService) { }
 
   posts: FacebookPost[] = [];
   ngOnInit(): void {
@@ -40,7 +46,13 @@ export class NewsCardComponent {
         this.isLoading = false;
         console.error(err);
       }
+      
     });
+  }
+
+  public goToNews(id:string){
+    this.pnService.setUserId(id);
+     this.router.navigate(['/news']);
   }
 
    getFirstSentence(text: string): string {

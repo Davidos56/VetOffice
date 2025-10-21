@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './components/home/home.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NewsCardComponent } from './components/newscard/newscard.component';
-import { SuccessComponent } from './components/success/success.component';
-import { TeamComponent } from './components/team/team.component';
+import { MapsComponent } from './components/maps/maps.component';
 import { SpecializationitemComponent } from './components/specializationitem/specializationitem.component';
-import { TeamitemComponent } from './components/teamitem/teamitem.component';
 import { GoogleMapsModule } from '@angular/google-maps'
 
 
@@ -14,21 +12,17 @@ import { GoogleMapsModule } from '@angular/google-maps'
   declarations: [],
   imports: [
     CommonModule,
-    HomeComponent,
+    WelcomeComponent,
     NewsCardComponent,
-    SuccessComponent,
-    TeamComponent,
+    MapsComponent,
     SpecializationitemComponent,
-    TeamitemComponent,
     GoogleMapsModule
   ],
   exports: [
-    HomeComponent,
+    WelcomeComponent,
     NewsCardComponent,
-    SuccessComponent,
-    TeamComponent,
+    MapsComponent,
     SpecializationitemComponent, 
-    TeamitemComponent, 
     GoogleMapsModule]
 })
 export class FeaturesModule { }

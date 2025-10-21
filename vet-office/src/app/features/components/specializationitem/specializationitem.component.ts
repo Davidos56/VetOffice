@@ -8,6 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 
 export class SpecializationitemComponent {
+@Input() Id! :string
+@Input() IsOdd: boolean = false;
 @Input() Title! :string
 @Input() CreatedDate! : string | null;
 @Input() Message! :string;

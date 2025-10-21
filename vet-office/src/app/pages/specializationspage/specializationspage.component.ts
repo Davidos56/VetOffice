@@ -1,10 +1,12 @@
-import { Component, LOCALE_ID } from '@angular/core';
+import { AfterViewInit, Component, LOCALE_ID, OnInit } from '@angular/core';
 import { SpecializationitemComponent } from '../../features/components/specializationitem/specializationitem.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FacebookService } from '../../services/facebook.service';
 import { FacebookPost } from '../../core/facebookpost.model';
 import { DatePipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { PageNavigationService } from '../../services/page-navigation.service';
 
 @Component({
   selector: 'app-specializationspage',
@@ -12,24 +14,39 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './specializationspage.component.html',
   styleUrl: './specializationspage.component.css'
 })
-export class SpecializationspageComponent {
+export class SpecializationspageComponent implements OnInit, AfterViewInit {
   isLoading: boolean = true;
-  constructor(private translate: TranslateService, private fbService: FacebookService){}
+  userId = "";
+  constructor(private translate: TranslateService,
+    private fbService: FacebookService,
+    private pnService: PageNavigationService) { }
 
-    posts: FacebookPost[] = [];
-    ngOnInit(): void {
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      const el = document.getElementById(this.userId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
+  }
+
+  posts: FacebookPost[] = [];
+  ngOnInit(): void {
+
+    this.userId = this.pnService.getUserId() || "";
     this.fbService.getPosts().subscribe({
       next: (data) => {
-        this.posts = data 
-        .filter((r: any) => !!r.message)
-        .map(post => ({
-        ...post,
-        formatted_date: this.getTranslatedDate(new Date(post.created_time)),
-        created_date: new Date(post.created_time),
-        title: this.getFirstSentence(post.message)
-      }))
-      .sort((a, b) => b.created_date.getTime() - a.created_date.getTime())
-      .slice(0, 3);
+        this.posts = data
+          .filter((r: any) => !!r.message)
+          .map(post => ({
+            ...post,
+            formatted_date: this.getTranslatedDate(new Date(post.created_time)),
+            created_date: new Date(post.created_time),
+            title: this.getFirstSentence(post.message)
+          }))
+          .sort((a, b) => b.created_date.getTime() - a.created_date.getTime())
+          .slice(0, 3);
         this.isLoading = false;
       },
       error: (err) => {
@@ -39,7 +56,7 @@ export class SpecializationspageComponent {
     });
   }
 
-   getFirstSentence(text: string): string {
+  getFirstSentence(text: string): string {
     if (!text) return '';
     const match = text.match(/.*?[.!?:](\s|$)/);
     return (match ? match[0] : text).trim();

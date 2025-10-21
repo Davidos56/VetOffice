@@ -1,32 +1,47 @@
-<div class="container px-4 py-5" id="hanging-icons">
-  <h2 class="pb-2 border-bottom">{{ 'NEWS' | translate}}</h2>
-  @if(!isLoading){
-  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-    @for (post of posts; track $index) {
-    <div class="col d-flex align-items-start news-card">
-      <div>
-        <h2>{{post.title}}</h2>
-        <p class="text-muted small mb-2">
-          <i class="bi bi-calendar3 me-1"></i><time [attr.datetime]="post.formatted_date">
-            {{post.formatted_date}}
-          </time>
-        </p>
-        <p class="text-news">{{post.message}}</p>
-        <a href="#" class="btn btn-primary">
-          {{ 'BUTTONS.MORE' | translate}}
-        </a>
+<div class="bg-color-f5">
+  <div class="container px-4 pt-5 pb-2" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">{{ 'NEWS' | translate }}</h2>
+
+    @if(!isLoading){
+      <div class="row g-4 py-5 justify-content-between">
+        @for (post of posts; track $index) {
+
+          <div class="featurette-card mb-4 news-card col-12 col-lg-4 rounded-4 shadow-sm p-4 d-flex flex-column justify-content-between"
+               style="background-color: #FFFFFF; transition: transform 0.2s, box-shadow 0.3s;">
+            <!-- Tekst -->
+            <div>
+              <h2 class="fw-semibold mb-3">{{ post.title }}</h2>
+
+              <!-- Data publikacji -->
+              <p class="text-secondary small d-flex align-items-center mb-3">
+                <i class="bi bi-calendar3 me-2"></i>{{ post.formatted_date }}
+              </p>
+
+              <!-- Wiadomość -->
+              <p class="lead text-muted mb-4 text-news">
+                {{ post.message }}
+              </p>
+            </div>
+
+            <!-- Przycisk -->
+            <div class="mt-auto">
+              <button class="btn btn-primary" (click)="goToNews(post.id)">
+                {{ 'BUTTONS.MORE' | translate }}
+              </button>
+            </div>
+          </div>
+
+        }
       </div>
-    </div>
+    }
+    @else{
+      <div class="d-flex justify-content-center align-items-center" style="min-height: 300px;">
+        <div class="text-center">
+          <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Ładowanie...</span>
+          </div>
+        </div>
+      </div>
     }
   </div>
-  }
-  @else{
-  <div class="d-flex justify-content-center align-items-center" style="min-height: 300px;">
-    <div class="text-center">
-      <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-        <span class="visually-hidden">Ładowanie...</span>
-      </div>
-    </div>
-  </div>
-  }
 </div>

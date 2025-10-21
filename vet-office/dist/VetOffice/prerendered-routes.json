@@ -1,6 +1,6 @@
 {
   "routes": {
     "/app": {},
-    "/app/specjalizacje": {}
+    "/app/news": {}
   }
 }

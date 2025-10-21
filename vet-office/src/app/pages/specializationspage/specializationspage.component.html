@@ -7,21 +7,23 @@
         </div>
     </div>
 </section>
-@if(!isLoading){
-<div class="container marketing">
-    @for (post of posts; track $index) {
-    <app-specializationitem class="news-card" [Title]="post.title" [CreatedDate]="post.formatted_date" [Message]="post.message"
-        [Img]="post.full_picture">
-    </app-specializationitem>
+<div class="bg-color-f5 d-flex justify-content-center align-items-center" style="min-height: 300px;">
+    @if(!isLoading){
+    <div class="container marketing">
+        @for (post of posts; track $index) {
+        <app-specializationitem class = "news-card" [Id]="post.id" [Title]="post.title"
+            [CreatedDate]="post.formatted_date" [Message]="post.message" [Img]="post.full_picture">
+        </app-specializationitem>
+        }
+    </div>
     }
-</div>
-}
-@else{
-<div class="d-flex justify-content-center align-items-center" style="min-height: 300px;">
-    <div class="text-center">
-        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-            <span class="visually-hidden">Ładowanie...</span>
+    @else{
+    <div class="">
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Ładowanie...</span>
+            </div>
         </div>
     </div>
+    }
 </div>
-}

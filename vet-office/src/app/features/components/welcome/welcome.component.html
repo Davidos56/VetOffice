@@ -1,0 +1,61 @@
+<section class="hero bg-dark text-white">
+  <div class="container text-center text-lg-start">
+    <div class="row align-items-center">
+
+      <!-- Logo i nazwa -->
+      <div class="col-lg-10 fade-in">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-start mb-4">
+          <img src="assets/img/wet-logo-2.png" alt="Gabinet Weterynaryjny Brzescy"
+            class="rounded shadow-sm me-md-3 mb-3 mb-md-0" style="height: 100px; width: auto;" />
+          <h1 class="fw-bold mb-0">{{basicInfo.name}}</h1>
+        </div>
+
+        <!-- Godziny otwarcia -->
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.OPENHOURS'| translate}}</h3>
+          <ul class="list-unstyled mb-3">
+            @for(weekday of basicInfo.weekday_text; track $index){
+            <li><strong>{{weekday.day}}:</strong> {{weekday.hours}}</li>
+            }
+          </ul>
+        </div>
+
+        <!-- Adres -->
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.ADRESS'| translate}}</h3>
+          <p class="mb-3">
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            {{basicInfo.formatted_address}}
+          </p>
+        </div>
+
+        <!-- Telefon -->
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.PHONE'| translate}}</h3>
+          <p class="mb-3">
+            <i class="bi bi-telephone-fill me-2"></i>
+            <a class="text-white text-decoration-none">{{basicInfo.formatted_phone_number}}</a>
+          </p>
+        </div>
+
+        <!-- Social media -->
+        <div class="info-block">
+          <h3 class="text-primary fw-semibold mb-2">{{'HOME.FINDUS'| translate}}</h3>
+          <div class="mb-3 gap-3 fs-4">
+            <a href="#" class="text-white hover-primary me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white hover-primary me-3"><i class="bi bi-google"></i></a>
+          </div>
+        </div>
+
+        <!-- Przycisk akcji -->
+        <div class="info-block">
+          <div class="mb-3 gap-3 fs-4">
+            <button type="button" (click)="onSendSms()" class="btn btn-primary btn-lg px-5 py-2 fw-semibold">
+              {{'BUTTONS.MAKEAPPOITMENT'| translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
