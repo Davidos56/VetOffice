@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WelcomeComponent } from './components/welcome/welcome.component';
-import { NewsCardComponent } from './components/newscard/newscard.component';
-import { MapsComponent } from './components/maps/maps.component';
-import { SpecializationitemComponent } from './components/specializationitem/specializationitem.component';
+import { WelcomeComponent } from './components/home-welcome/welcome.component';
+import { HomeNewsComponent } from './components/home-news/home-news.component';
+import { HomeMapsComponent } from './components/home-maps/home-maps.component';
 import { GoogleMapsModule } from '@angular/google-maps'
 
 
@@ -13,16 +12,14 @@ import { GoogleMapsModule } from '@angular/google-maps'
   imports: [
     CommonModule,
     WelcomeComponent,
-    NewsCardComponent,
-    MapsComponent,
-    SpecializationitemComponent,
+    HomeNewsComponent,
+    HomeMapsComponent,
     GoogleMapsModule
   ],
   exports: [
     WelcomeComponent,
-    NewsCardComponent,
-    MapsComponent,
-    SpecializationitemComponent, 
+    HomeNewsComponent,
+    HomeMapsComponent,
     GoogleMapsModule]
 })
 export class FeaturesModule { }

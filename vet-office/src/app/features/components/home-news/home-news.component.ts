@@ -12,12 +12,12 @@ import { PageNavigationService } from '../../../services/page-navigation.service
 registerLocaleData(localePl);
 
 @Component({
-  selector: 'app-newscard',
+  selector: 'app-home-news',
   imports: [TranslatePipe],
-  templateUrl: './newscard.component.html',
-  styleUrl: './newscard.component.css'
+  templateUrl: './home-news.component.html',
+  styleUrl: './home-news.component.css'
 })
-export class NewsCardComponent {
+export class HomeNewsComponent {
 
   isLoading = true;
   constructor(

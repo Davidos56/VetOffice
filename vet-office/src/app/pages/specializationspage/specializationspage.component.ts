@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, LOCALE_ID, OnInit } from '@angular/core';
-import { SpecializationitemComponent } from '../../features/components/specializationitem/specializationitem.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { FacebookService } from '../../services/facebook.service';
 import { FacebookPost } from '../../core/facebookpost.model';
@@ -10,7 +9,7 @@ import { PageNavigationService } from '../../services/page-navigation.service';
 
 @Component({
   selector: 'app-specializationspage',
-  imports: [SpecializationitemComponent, TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './specializationspage.component.html',
   styleUrl: './specializationspage.component.css'
 })

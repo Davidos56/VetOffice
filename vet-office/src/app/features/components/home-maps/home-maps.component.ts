@@ -8,10 +8,10 @@ import { GoogleService } from '../../../services/google.service';
 @Component({
   selector: 'app-maps',
   imports: [GoogleMapsModule, MapMarker, TranslatePipe],
-  templateUrl: './maps.component.html',
-  styleUrl: './maps.component.css'
+  templateUrl: './home-maps.component.html',
+  styleUrl: './home-maps.component.css'
 })
-export class MapsComponent implements OnInit {
+export class HomeMapsComponent implements OnInit {
   mapLeaded: boolean = false
   isBrowser: boolean = false;
 
